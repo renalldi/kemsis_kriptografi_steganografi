@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kriptografi & Steganografi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <style>
+    * {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #c4f0c5, #cbefff);
+      color: #2c3e50;
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: #1c5d99;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+      background: white;
+      padding: 25px 30px;
+      margin: 15px 0;
+      border-radius: 16px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 480px;
+      transition: transform 0.2s ease;
+    }
+
+    form:hover {
+      transform: scale(1.02);
+    }
+
+    form h2 {
+      margin-bottom: 20px;
+      color: #145374;
+    }
+
+    input[type="text"],
+    input[type="file"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: border 0.2s ease;
+    }
+
+    input:focus {
+      border-color: #17c3b2;
+      outline: none;
+    }
+
+    button {
+      padding: 12px 20px;
+      background: linear-gradient(90deg, #17c3b2, #3a86ff);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #138a7d, #2b65c7);
+    }
+
+    .footer {
+      margin-top: 50px;
+      color: #666;
+      font-size: 14px;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>🔐 Kriptografi & 🖼️ Steganografi Web</h1>
+
+  <!-- Caesar Cipher Enkripsi -->
+  <form action="/encrypt" method="post">
+    <h2>Caesar Cipher (Enkripsi)</h2>
+    <input type="text" name="plain_text" placeholder="Masukkan teks" required>
+    <input type="text" name="key" placeholder="Kunci (angka)" required>
+    <button type="submit">🔒 Enkripsi</button>
+  </form>
+
+  <!-- Caesar Cipher Dekripsi -->
+    <form action="/decrypt" method="post">
+    <h2>Caesar Cipher (Dekripsi Brute Force)</h2>
+  <input type="text" name="cipher_text" placeholder="Masukkan teks terenkripsi" required>
+  <button type="submit">🤖 Coba Semua Kunci</button>
+    </form>
+
+  <!-- Steganografi Embed -->
+  <form action="/embed" method="post" enctype="multipart/form-data">
+    <h2>Steganografi (Sisipkan Pesan)</h2>
+    <input type="file" name="image" accept="image/png" required>
+    <input type="text" name="message" placeholder="Pesan yang ingin disisipkan" required>
+    <button type="submit">🖼️ Sisipkan Pesan</button>
+  </form>
+
+  <!-- Steganografi Extract -->
+  <form action="/extract" method="post" enctype="multipart/form-data">
+    <h2>Ekstraksi Pesan dari Gambar</h2>
+    <input type="file" name="image" accept="image/png" required>
+    <button type="submit">📤 Ekstrak Pesan</button>
+  </form>
+
+  <div class="footer">© 2025 | Dibuat dengan 💙 & 💚 oleh Kelompok 4</div>
+</body>
+</html>
